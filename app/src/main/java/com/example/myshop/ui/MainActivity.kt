@@ -1,5 +1,6 @@
 package com.example.myshop.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
@@ -17,9 +18,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity() : AppCompatActivity(),{
+class MainActivity() : AppCompatActivity(){
     val productsViewModel:ProductsViewModel by viewModels()
-    lateinit var binding: ActivityMainBinding
+    lateinit var binding:ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,10 @@ class MainActivity() : AppCompatActivity(),{
 
     override fun onResume() {
         super.onResume()
+        binding.btnFloating.setOnClickListener {
+            val intent = Intent(this,UsersActivity::class.java)
+            startActivity(intent)
+        }
         productsViewModel.fetchProducts()
         productsViewModel.productsLiveData.observe(this, Observer { productsList ->
             Toast.makeText(
