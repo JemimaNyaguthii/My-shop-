@@ -6,10 +6,9 @@
     android:layout_margin="2dp"
     android:padding="2dp"
     android:layout_height="wrap_content">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="#38d9a9"
+        android:background="#b2f2bb"
         android:layout_height="match_parent">
 
         <ImageView

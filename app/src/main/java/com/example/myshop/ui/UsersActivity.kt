@@ -13,7 +13,6 @@ import com.example.myshop.viewmodel.UsersViewModel
 class UsersActivity (): AppCompatActivity() {
         val usersViewModel: UsersViewModel by viewModels()
     lateinit var binding: ActivityUsersBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityUsersBinding.inflate(layoutInflater)
@@ -21,13 +20,11 @@ class UsersActivity (): AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-
-
      usersViewModel.fetchUsers()
         usersViewModel.usersLiveData.observe(this, Observer { usersList ->
             Toast.makeText(
                 baseContext,
-                "fetched ${usersList?.size} users",
+                   "fetched ${usersList?.size} users",
                 Toast.LENGTH_LONG
             ).show()
             binding.rvUsers.layoutManager = LinearLayoutManager(this@UsersActivity)

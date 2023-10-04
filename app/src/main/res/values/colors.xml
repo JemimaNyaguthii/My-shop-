@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<!--    <color name="green">#22DFBA</color>-->
+
+<!--    <string name="heading">Welcome to LactoMama</string>-->
+<!--    <string name="paragraph">Here to walk with you through your lactation journery, Mama!</string>-->
+<!--    <string name="heading2">Hello!</string>-->
+<!--    <string name="paragraph1">A Friend that you can rely on to give you-->
+<!--    guidance on your lactation journey.</string>-->
+<!--    <string name="paragraph2">We are the friend that will enable you get reliable information from lactation experts-->
+<!--    </string>-->
+<!--    <string name="heading3">Benefits</string>-->
+<!--    <string name="heading4">This will enable you to track the feeding habits of the baby</string>-->
 </resources>

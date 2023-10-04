@@ -8,6 +8,7 @@ import android.os.Parcelable
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myshop.models.ProductsResponse
 import com.example.myshop.api.ApiClient
@@ -30,6 +31,7 @@ class MainActivity() : AppCompatActivity(){
 
     override fun onResume() {
         super.onResume()
+
         binding.btnFloating.setOnClickListener {
             val intent = Intent(this,UsersActivity::class.java)
             startActivity(intent)
@@ -41,8 +43,8 @@ class MainActivity() : AppCompatActivity(){
                 "fetched ${productsList?.size} products",
                 Toast.LENGTH_LONG
             ).show()
-            binding.rvProducts.layoutManager = LinearLayoutManager(this@MainActivity)
-            binding.rvProducts.adapter = ProductsRvAdapter(productsList)
+            binding.rvProducts.layoutManager = GridLayoutManager(this@MainActivity,2)
+            binding.rvProducts.adapter = ProductsRvAdapter(productsList,this)
         })
         productsViewModel.errorLiveData.observe(this, Observer { error ->
             Toast.makeText(

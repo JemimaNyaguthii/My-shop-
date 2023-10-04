@@ -8,7 +8,6 @@ import com.example.myshop.databinding.UsersListItemBinding
 import com.example.myshop.models.Product
 import com.example.myshop.models.Users
 import com.squareup.picasso.Picasso
-import jp.wasabeef.picasso.transformations.CropCircleTransformation
 
 class UsersRvAdapter (var users:List<Users>): RecyclerView.Adapter<UsersRvAdapter.UsersViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
@@ -34,9 +33,7 @@ class UsersRvAdapter (var users:List<Users>): RecyclerView.Adapter<UsersRvAdapte
             .get().load(currentUsers.image)
             .resize(80, 80)
             .centerInside()
-            .transform(CropCircleTransformation())
             .into(binding.ivImage)
-
     }
 
     override fun getItemCount(): Int {
